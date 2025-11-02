@@ -139,3 +139,7 @@ tests/
 
 - Run automated checks: `matlab -batch "scripts.runTests"`
 - Package the toolbox: `matlab -batch "pkgFile = scripts.packageToolbox"`
+
+## Inspiration
+
+- MATLAB Toolbox Best Practices: https://github.com/mathworks/toolboxdesign
