@@ -1,4 +1,4 @@
-# MATLAB NFL Analytics Toolbox [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=slevin48/NFL-Toolbox&project=nflToolbox.prj)
+# MATLAB NFL Analytics Toolbox [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=slevin48/NFL-Toolbox)
 
 This project provides a MATLAB-first interface to the open-source
 [`nfl_data_py`](https://pypi.org/project/nfl-data-py/) library.  It delivers
@@ -7,16 +7,16 @@ team performance, and visualising trends directly inside MATLAB.
 
 ## Features
 
-- **Python bridge** – Lightweight Python wrapper (`toolbox/python/nfl_data_py_wrapper.py`)
+- **Python bridge** ??? Lightweight Python wrapper (`toolbox/python/nfl_data_py_wrapper.py`)
   that exposes core `nfl_data_py` queries with JSON serialisation.
-- **MATLAB helpers** – High-level MATLAB functions for weekly statistics,
+- **MATLAB helpers** ??? High-level MATLAB functions for weekly statistics,
   play-by-play exploration, top-performer plots, and team dashboards. Weekly
   stats default to offensive positions; pass `StatType` (e.g., `"defense"`,
   `"kicking"`, or `"all"`) to retune the position filters.
-- **Dual execution modes** – Choose MATLAB's built-in `py.*` interface or a
+- **Dual execution modes** ??? Choose MATLAB's built-in `py.*` interface or a
   system-level Python call for environments where MATLAB's Python engine is not
   configured.
-- **Environment check** – `checkNFLDataPySetup` quickly validates your Python
+- **Environment check** ??? `checkNFLDataPySetup` quickly validates your Python
   interpreter, module availability, and wrapper connectivity.
 
 ## Directory layout

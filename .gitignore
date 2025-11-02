@@ -1,3 +1,5 @@
+resources/
 .vscode/
 .uv/
 *.bak
+nflToolbox.prj
