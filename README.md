@@ -1,4 +1,4 @@
-# MATLAB NFL Analytics Toolbox
+# MATLAB NFL Analytics Toolbox [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=slevin48/NFL-Toolbox&project=nflToolbox.prj)
 
 This project provides a MATLAB-first interface to the open-source
 [`nfl_data_py`](https://pypi.org/project/nfl-data-py/) library.  It delivers
