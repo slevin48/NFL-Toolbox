@@ -30,9 +30,9 @@ toolbox/
   plotTopPlayers.m
   showTeamDashboard.m
   doc/
-    GettingStarted.mlx (placeholder)
+    GettingStarted.m
   examples/
-    weeklyTopQuarterbacks.mlx (placeholder)
+    weeklyTopQuarterbacks.m
   python/
     nfl_data_py_wrapper.py
   +nfl/+internal/
