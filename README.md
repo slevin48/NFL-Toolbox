@@ -52,6 +52,19 @@ tests/
 
 ## Getting started
 
+0. **Open in MATLAB Online**
+
+   Follow instructions from blog post on [pip & uv in MATLAB Online](https://blogs.mathworks.com/deep-learning/2025/09/17/pip-uv-in-matlab-online/):
+   ```matlab
+   % Retrieve pip from PyPA
+    websave('/tmp/get-pip.py','https://bootstrap.pypa.io/get-pip.py');
+    % Install pip
+    system('python /tmp/get-pip.py');
+    % Install dependencies
+    system('python -m pip install -q pandas nfl_data_py');
+    ```
+    If you are running on your desktop make sure to have a python environment with pandas and nfl_data_py installed.
+
 1. **Confirm Python setup**
 
    ```matlab
