@@ -65,41 +65,46 @@ tests/
     ```
     If you are running on your desktop make sure to have a python environment with pandas and nfl_data_py installed.
 
-1. **Confirm Python setup**
+1. **Add toolbox folder to path**
+
+  ```matlab
+  addpath(genpath('toolbox'));
+  ```
+  
+2. **Confirm Python setup**
 
    ```matlab
-   status = checkNFLDataPySetup;
-   disp(status)
+   status = checkNFLDataPySetup
    ```
 
    If MATLAB is not linked to the Python environment that contains
    `nfl_data_py`, specify it explicitly:
 
    ```matlab
-   status = checkNFLDataPySetup(PythonExecutable="/path/to/python");
+   status = checkNFLDataPySetup(PythonExecutable="/path/to/python")
    ```
 
    When no interpreter is specified, the toolbox automatically attempts to use
    the repository's managed environment at `.venv/bin/python` (or the platform
    equivalent) before falling back to the system configuration.
 
-2. **Call high-level MATLAB functions**
+3. **Call high-level MATLAB functions**
 
    ```matlab
    % Weekly stats (returns table)
-   stats = getWeeklyStats(5, 2023);
+   stats = getWeeklyStats(5, 2023)
 
    % Play-by-play data filtered by team
-   [pbp, meta] = getPlayByPlay(2023, 5, "KC");
+   [pbp, meta] = getPlayByPlay(2023, 5, "KC")
 
    % Visualise top performers
-   plotTopPlayers("passing_yards", 5, 2023);
+   plotTopPlayers("passing_yards", 5, 2023)
 
    % Build an interactive team dashboard
-   showTeamDashboard("KC", 2023);
+   showTeamDashboard("KC", 2023)
    ```
 
-3. **Switch to system-call mode (optional)**
+4. **Switch to system-call mode (optional)**
 
    ```matlab
    stats = getWeeklyStats(5, 2023, UseSystemCall=true);
