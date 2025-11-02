@@ -7,7 +7,7 @@ team performance, and visualising trends directly inside MATLAB.
 
 ## Features
 
-- **Python bridge** – Lightweight Python wrapper (`toolbox/resources/python/nfl_data_py_wrapper.py`)
+- **Python bridge** – Lightweight Python wrapper (`toolbox/python/nfl_data_py_wrapper.py`)
   that exposes core `nfl_data_py` queries with JSON serialisation.
 - **MATLAB helpers** – High-level MATLAB functions for weekly statistics,
   play-by-play exploration, top-performer plots, and team dashboards. Weekly
@@ -33,9 +33,8 @@ toolbox/
     GettingStarted.mlx (placeholder)
   examples/
     weeklyTopQuarterbacks.mlx (placeholder)
-  resources/
-    python/
-      nfl_data_py_wrapper.py
+  python/
+    nfl_data_py_wrapper.py
   +nfl/+internal/
     callSystemWrapper.m
     callWrapper.m

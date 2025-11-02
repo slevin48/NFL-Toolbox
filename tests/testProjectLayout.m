@@ -29,9 +29,9 @@ end
 
 function testPythonWrapperExists(testCase)
 repoRoot = testCase.TestData.RepoRoot;
-wrapperPath = fullfile(repoRoot, "toolbox", "resources", "python", "nfl_data_py_wrapper.py");
+wrapperPath = fullfile(repoRoot, "toolbox", "python", "nfl_data_py_wrapper.py");
 verifyTrue(testCase, isfile(wrapperPath), ...
-    "Python wrapper must exist under toolbox/resources/python.");
+    "Python wrapper must exist under toolbox/python.");
 end
 
 function testToolboxContentsPresent(testCase)

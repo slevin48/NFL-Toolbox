@@ -1,7 +1,7 @@
 function ensurePythonPath()
 % ensurePythonPath Adds the project's Python directory to sys.path once.
 
-pythonDir = fullfile(nfl.internal.projectRoot(), "toolbox", "resources", "python");
+pythonDir = fullfile(nfl.internal.projectRoot(), "toolbox", "python");
 if ~isfolder(pythonDir)
     error("nfl:MissingPythonDir", "Expected Python directory at %s", pythonDir);
 end
