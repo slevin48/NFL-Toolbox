@@ -239,7 +239,7 @@ title(sprintf("%s Roster Profile", team));
 grid on;
 end
 
-function plotTopPerformersSummary(weeklyTeam, team)
+function plotTopPerformersSummary(weeklyTeam, ~)
 axis off;
 title("Top Performers");
 if isempty(weeklyTeam)

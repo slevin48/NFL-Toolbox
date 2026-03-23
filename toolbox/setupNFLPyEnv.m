@@ -29,14 +29,14 @@ uvInstallDir = fullfile(projectRoot, ".uv");
 
 try
     [uvPath, uvMessages] = ensureUvAvailable(uvInstallDir, options.ForceInstallUv);
-    messages = [messages; uvMessages]; %#ok<AGROW>
+    messages = [messages; uvMessages];
 
     [pythonExe, venvMessages] = ensureVirtualEnvironment(uvPath, options.EnvironmentRoot, options.ForceRecreateVenv);
-    messages = [messages; venvMessages]; %#ok<AGROW>
+    messages = [messages; venvMessages];
 
     if ~isempty(options.Requirements)
         installMessages = installPythonRequirements(uvPath, pythonExe, options.Requirements);
-        messages = [messages; installMessages]; %#ok<AGROW>
+        messages = [messages; installMessages];
     end
 
     status.Success = true;
@@ -56,11 +56,11 @@ end
 
 uvPath = locateUvBinary(installDir);
 if ~forceInstall && isfile(uvPath)
-    messages(end + 1) = "Reusing existing uv installation at " + string(uvPath);
+    messages = [messages; "Reusing existing uv installation at " + string(uvPath)];
     return
 end
 
-messages(end + 1) = "Fetching uv for the current platform.";
+messages = [messages; "Fetching uv for the current platform."];
 installCmd = buildUvInstallCommand(installDir);
 runCommand(installCmd, "uv installer");
 
@@ -73,7 +73,7 @@ if ~ispc
     fileattrib(char(uvPath), "+x");
 end
 
-messages(end + 1) = "uv installed at " + string(uvPath);
+messages = [messages; "uv installed at " + string(uvPath)];
 end
 
 function [pythonExe, messages] = ensureVirtualEnvironment(uvPath, envRoot, forceRecreate)
@@ -81,11 +81,11 @@ messages = strings(0, 1);
 envExists = isfolder(envRoot);
 
 if envExists && forceRecreate
-    messages(end + 1) = "Recreating virtual environment at " + string(envRoot);
+    messages = [messages; "Recreating virtual environment at " + string(envRoot)];
 elseif envExists
-    messages(end + 1) = "Virtual environment already present at " + string(envRoot) + ", ensuring metadata is up to date.";
+    messages = [messages; "Virtual environment already present at " + string(envRoot) + ", ensuring metadata is up to date."];
 else
-    messages(end + 1) = "Creating virtual environment at " + string(envRoot);
+    messages = [messages; "Creating virtual environment at " + string(envRoot)];
 end
 
 venvCmd = sprintf('"%s" venv "%s"', uvPath, char(envRoot));
@@ -96,7 +96,7 @@ if pythonExe == ""
     error("nfl:PythonNotFound", "Unable to locate python executable inside %s.", envRoot);
 end
 
-messages(end + 1) = "Virtual environment ready with python at " + pythonExe;
+messages = [messages; "Virtual environment ready with python at " + pythonExe];
 end
 
 function messages = installPythonRequirements(uvPath, pythonExe, requirements)
@@ -105,7 +105,7 @@ reqList = strjoin(string(requirements), " ");
 installCmd = sprintf('"%s" pip install --python "%s" %s', uvPath, pythonExe, char(reqList));
 runCommand(installCmd, "uv pip install");
 
-messages(end + 1) = "Installed Python packages: " + strjoin(requirements, ", ");
+messages = [messages; "Installed Python packages: " + strjoin(requirements, ", ")];
 end
 
 function uvPath = locateUvBinary(installDir)

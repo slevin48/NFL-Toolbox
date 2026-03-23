@@ -14,6 +14,4 @@ if ~any(strcmp(sysPathChars, pythonDir))
     py.importlib.invalidate_caches();
 end
 
-persistent pathAdded
-pathAdded = true; %#ok<NASGU>
 end

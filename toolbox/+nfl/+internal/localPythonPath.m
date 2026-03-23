@@ -12,7 +12,7 @@ candidates = [ ...
     fullfile(rootDir, ".venv", "Scripts", "python.exe") ...
     ];
 
-pythonPath = string("");
+pythonPath = "";
 for idx = 1:numel(candidates)
     candidate = candidates(idx);
     if isfile(candidate)

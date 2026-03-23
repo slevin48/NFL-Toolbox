@@ -11,7 +11,7 @@ if strlength(pythonCmd) == 0
     pythonCmd = nfl.internal.detectPythonCommand();
 end
 
-scriptPath = fullfile(nfl.internal.projectRoot(), "toolbox", "resources", "python", "nfl_data_py_wrapper.py");
+scriptPath = fullfile(nfl.internal.projectRoot(), "toolbox", "python", "nfl_data_py_wrapper.py");
 if ~isfile(scriptPath)
     error("nfl:MissingWrapperScript", "Expected Python wrapper at %s", scriptPath);
 end
